@@ -11,6 +11,16 @@ public class Homework1 {
     public static void ex1() {
         //Дана строка
         String name = "     ПЕтРов Олег Иванович     ";
+
+        String newName = name.trim().toUpperCase();
+        if (newName.contains("ОВА ")) {
+            System.out.println("Уважаемая " + newName);
+        } else if (newName.contains("ОВ ")) {
+            System.out.println("Уважаемый " + newName);
+        } else {
+            System.out.println("Неизвестное лицо " + newName);
+        }
+
         //Необходимо
         //1. убрать лишние пробелы,
         //2. перевести текст в верхний регистр
@@ -37,10 +47,10 @@ public class Homework1 {
         // когда топлива не меньше 10 литров, двигатель работает, колеса все работают, нет ошибок
         //В ином случае, машина не должна запускаться
         if (
-                fuel < 10
-                ||  (!isWheelWork1 || isWheelWork2 || isWheelWork3 || isWheelWork4)
-                && hasErrors
-                || isEngineWork
+                fuel >= 10
+                        && (isWheelWork1 && isWheelWork2 && isWheelWork3 && isWheelWork4)
+                        && !hasErrors
+                        && isEngineWork
         ) {
             System.out.println("Машина работает");
         } else {
@@ -53,6 +63,8 @@ public class Homework1 {
         //Заменить в строке все 'this is' на 'those are', получить индекс (число) второй буквы 'o' в строке
         //Распечатать полученный индекс
         String simply = "this is simply. This is my favorite song.";
+        System.out.println(simply.replaceAll("this is","those are").replaceAll("This is","Those are")
+                .indexOf("o",3));
     }
 
     public static void ex4() {
