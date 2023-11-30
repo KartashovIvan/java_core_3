@@ -53,6 +53,7 @@ public class Homework1 {
         //Заменить в строке все 'this is' на 'those are', получить индекс (число) второй буквы 'o' в строке
         //Распечатать полученный индекс
         String simply = "this is simply. This is my favorite song.";
+
     }
 
     public static void ex4() {
