@@ -1,10 +1,13 @@
 package org.example.homework.second;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Homework2 {
     public static void main(String[] args) {
-
+        ex1();
+        ex2();
+        ex3();
     }
 
     public static void ex1() {
@@ -28,12 +31,25 @@ public class Homework2 {
         int leftUpToRightDownSum = 0;
         //С левого нижнего угла к верхнему правому
         int leftDownToRightUpSum = 0;
+
+        for (int i = 0; i < arrayOfNumbers.length; i++) {
+            leftUpToRightDownSum += arrayOfNumbers[i][i];
+            leftDownToRightUpSum += arrayOfNumbers[arrayOfNumbers.length - i - 1][i];
+        }
+
+        System.out.println("leftUpToRightDownSum: " + leftUpToRightDownSum + "; leftDownToRightUpSum: " + leftDownToRightUpSum);
     }
 
     public static void ex2() {
         //Перевернуть массив(без сторонних классов), не создавая новый массив. Вывести на экран.
         //"перевернуть" - значит последние элементы становятся первыми и наоборот.
         int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        for (int i = 0; i < numbers.length / 2; i++) {
+            int temp = numbers[i];
+            numbers[i] = numbers.length - i;
+            numbers[numbers.length - i - 1] = temp;
+        }
+        System.out.println(Arrays.toString(numbers));
     }
 
     public static void ex3() {
@@ -41,7 +57,14 @@ public class Homework2 {
         Random random = new Random(1);
         //Получение случайного числа
         int number = random.nextInt(1000);
+        int counter = 1;
 
+        while (number != 999) {
+            number = random.nextInt(1000);
+            counter++;
+        }
+
+        System.out.println("Попытка № " + counter);
         //Написать код, генерирующий случайные числа до тех пор, пока не сгенерируется 999.
         //Вывести номер попытки, с которой получилось получить случайным образом число 999.
     }
