@@ -1,5 +1,7 @@
 package org.example.homework;
 
+import java.math.BigDecimal;
+
 public class Homework1 {
     public static void main(String[] args) {
         ex1();
@@ -63,11 +65,53 @@ public class Homework1 {
         //Заменить в строке все 'this is' на 'those are', получить индекс (число) второй буквы 'o' в строке
         //Распечатать полученный индекс
         String simply = "this is simply. This is my favorite song.";
-        System.out.println(simply.replaceAll("this is","those are").replaceAll("This is","Those are")
-                .indexOf("o",3));
+        System.out.println(simply.replace("this is", "those are")
+                .replace("This is", "Those are")
+                .indexOf("o", 3));
     }
 
     public static void ex4() {
+        int salesSausage = 2000;
+        int salesHam = 8511;
+        int salesNeck = 6988;
+
+        int priceSausage = 800;
+        int productionCostSausageLessOne = 412;
+        int productionCostSausageMoreOne = 408;
+        int productionCostSausageMoreTwo = 404;
+
+        int priceHam = 350;
+        int productionCostHam = 275;
+
+        int priceNeck = 500;
+        int productionCostNeckLessFiveHundred = 311;
+        int productionCostNeckFiveHundred = 299;
+
+        double companyIncome = (salesSausage * priceSausage) + (salesHam * priceHam) + (salesNeck * priceNeck);
+        System.out.println(companyIncome);
+
+        double companyOutcome = 1_000_000;
+
+        if (salesSausage < 1000) {
+            companyOutcome += productionCostSausageLessOne * salesSausage;
+        } else if (salesSausage >= 1000 && salesSausage < 2000) {
+            companyOutcome += productionCostSausageMoreOne * salesSausage;
+        } else {
+            companyOutcome += productionCostSausageMoreTwo * salesSausage;
+        }
+
+        if (priceNeck < 500) {
+            companyOutcome += productionCostNeckLessFiveHundred * salesNeck;
+        } else {
+            companyOutcome += productionCostNeckFiveHundred * salesNeck;
+        }
+
+        companyOutcome += productionCostHam * salesHam;
+
+        System.out.println((companyIncome - companyOutcome) - (83491.3 + 80_000));
+
+
+
         //Компания Рога и Копыта производит мясные продукты.
         //Перечень производимых товаров :
         //Колбаса - стоимость 800 руб,
