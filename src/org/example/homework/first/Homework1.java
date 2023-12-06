@@ -41,9 +41,9 @@ public class Homework1 {
         boolean isWheelWork4 = true;
         if (
                 fuel >= 10
-                &&  (isWheelWork1 && isWheelWork2 && isWheelWork3 && isWheelWork4)
-                && !hasErrors
-                && isEngineWork
+                        && (isWheelWork1 && isWheelWork2 && isWheelWork3 && isWheelWork4)
+                        && !hasErrors
+                        && isEngineWork
         ) {
             System.out.println("Машина работает");
         } else {
@@ -69,13 +69,13 @@ public class Homework1 {
         int neckCost = getProductCost(NECK, neckQty);
 
         long income = calcTotal(
-                new int[]{SAUSAGE.getPrice(), HAM.getPrice(), NECK.getPrice() },
+                new int[]{SAUSAGE.getPrice(), HAM.getPrice(), NECK.getPrice()},
                 new int[]{sausageQty, hamQty, neckQty}
         );
 
         int overheads = 1_000_000;
         long outcome = calcOutcome(
-                new int[]{sausageCost, hamCost, neckCost },
+                new int[]{sausageCost, hamCost, neckCost},
                 new int[]{sausageQty, hamQty, neckQty},
                 overheads
         );
@@ -125,18 +125,18 @@ public class Homework1 {
 
 
     private static int getProductCost(Product product, int countProduct) {
-       if (product == SAUSAGE) {
-           if (countProduct < 1000) {
-               return  412;
-           } else if (countProduct >= 1000 && countProduct < 2000) {
-               return 408;
-           }
-           return 404;
-       } else if (product == Product.HAM) {
-           return 275;
-       } else if (product == Product.NECK) {
-           return countProduct < 500 ? 311 : 299;
-       }
-       throw new RuntimeException("Неизвестный тип продукта");
+        if (product == SAUSAGE) {
+            if (countProduct < 1000) {
+                return 412;
+            } else if (countProduct >= 1000 && countProduct < 2000) {
+                return 408;
+            }
+            return 404;
+        } else if (product == Product.HAM) {
+            return 275;
+        } else if (product == Product.NECK) {
+            return countProduct < 500 ? 311 : 299;
+        }
+        throw new RuntimeException("Неизвестный тип продукта");
     }
 }
