@@ -1,18 +1,21 @@
-package org.example.lessons.example;
+package org.example.lessons.lesson5;
 
 import org.example.lessons.lesson5.Cat;
 
 public class Human {
+    //Константа - атрибут static final, особый стиль написания
     public static final String APPEAL_TO_HUMAN = "mr.";
-    private static final String name2;
     private String name;
     private String appeal;
     private final int yearOfBirth;
+
+    //Final для атрибута cat НЕ ЗАПРЕЩАЕТ менять значения внутри присвоенного кота
+    //Он ЗАПРЕЩАЕТ присваивать нового кота
     private final Cat cat;
 
+    //Статическая инициализация
     static {
         System.out.println("Привет мир!");
-        name2 = "hello";
     }
 
     public Human(int yearOfBirth, Cat cat) {
@@ -20,8 +23,6 @@ public class Human {
         this.cat = cat;
         this.appeal = APPEAL_TO_HUMAN;
     }
-
-
 
     public String getName() {
         return APPEAL_TO_HUMAN + name;

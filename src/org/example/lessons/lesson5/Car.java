@@ -1,7 +1,11 @@
 package org.example.lessons.lesson5;
 
 public class Car {
+    //Статический атрибут, которое принадлежит классу Car
+    //Объекты класса видят данный атрибут
+    //public - означает зону возможность использовать это значение из всех классов
     public static String factoryName = "bmw";
+    //private - означает зону видимости только в пределах этого класса
     private String model;
     private int yearFounded;
     private int fuel;
@@ -13,10 +17,12 @@ public class Car {
         this.model = model;
     }
 
+    //Getter - получение значения атрибута
     public String getModel() {
         return model;
     }
 
+    //Setter - установка нового значения атрибута
     public void setModel(String model) {
         this.model = model;
     }
@@ -47,6 +53,7 @@ public class Car {
         printEngineWorks();
     }
 
+    //Приватный метод, для использования в других методах этого класса
     private void printEngineWorks() {
         System.out.println("Двигатель запущен");
         System.out.println("Двигатель успешно работает");
