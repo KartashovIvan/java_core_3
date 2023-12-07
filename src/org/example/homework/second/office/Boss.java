@@ -7,7 +7,7 @@ public class Boss {
         this.name = name;
     }
 
-    public void hurryUpManager (Manager manager) {
+    public void hurryUpManager(Manager manager) {
         System.out.println(manager.name + " быстрее!");
     }
 }
