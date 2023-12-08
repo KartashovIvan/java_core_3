@@ -81,9 +81,9 @@ public class CodeStyle {
         // Внимание: это не касается комментариев описательного характера
         // Пример:
         // Это удаляем
-//        System.out.println("llll");
-//        System.out.println("llll");
-//        System.out.println("llll");
+        //System.out.println("llll");
+        //System.out.println("llll");
+        //System.out.println("llll");
         // Это оставляем
         //Возраст покупателя
         int ageShopper = 18;

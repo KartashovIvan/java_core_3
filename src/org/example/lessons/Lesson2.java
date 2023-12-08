@@ -6,7 +6,7 @@ public class Lesson2 {
         int priceBread = 50;
         int milk = 20;
         boolean condition = false;
-        if (false ) {
+        if (false) {
             System.out.println("Покупаю хлеб");
         } else if (milk < money) {
             System.out.println("Покупаю молоко");
@@ -42,9 +42,11 @@ public class Lesson2 {
         // (false)          || (false)          || (false)
         // false || (false)
         // false
-        if ( childAge1 >= 18 || childAge2 >= 18 || childAge3 >= 18 ) {
+        if (childAge1 >= 18 || childAge2 >= 18 || childAge3 >= 18) {
             System.out.println("Открываю шампанское");
         }
+
+        if (true) System.out.println();
 
         //Логическое "Не" - переворачивает значение
         boolean isGoToSchool = !true;
