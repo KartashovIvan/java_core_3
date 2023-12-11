@@ -1,8 +1,6 @@
 package org.example.lessons.lesson6;
 
 import org.example.lessons.lesson6.example1.Child;
-import org.example.lessons.lesson6.example3.Animal;
-import org.example.lessons.lesson6.example3.Dog;
 
 public class Lesson6 {
     public static void main(String[] args) {
