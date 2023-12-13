@@ -1,9 +1,24 @@
 package org.example.homework.third;
 
+import org.example.homework.third.ex1.Birch;
+import org.example.homework.third.ex1.Pine;
+import org.example.homework.third.ex1.Spruce;
+import org.example.homework.third.ex1.Tree;
+import org.example.homework.third.ex2.*;
+import org.example.homework.third.ex3.Pyramid1;
+import org.example.homework.third.ex4.LotteryTicket;
+import org.example.homework.third.ex5.City;
+import org.example.homework.third.ex5.House;
+
 public class Homework3 {
     public static void main(String[] args) {
         //В этом дз уже будет проверятся наличие корректных модификаторов доступа
         //у классов, атрибутов, методов
+        ex1();
+        ex2();
+        ex3();
+        ex4();
+        ex5();
     }
 
     public static void ex1() {
@@ -23,6 +38,16 @@ public class Homework3 {
         //
         //Создать в методе ex1 сосну, березу, ель. Положить в массив.
         //Посчитать их средний возраст.
+        Pine pine = new Pine(3, "Крупные");
+        Spruce spruce = new Spruce(5, "Мелкие");
+        Birch birch = new Birch(6);
+
+        Tree[] trees = {pine, spruce, birch};
+        double averageAge = 0;
+        for (Tree tree : trees) {
+            averageAge += tree.getAge();
+        }
+        System.out.println("Средний возраст деревьев " + averageAge / trees.length);
     }
 
     public static void ex2() {
@@ -42,6 +67,19 @@ public class Homework3 {
         //В фабрике должно быть два публичных метода с одним названием:
         //один будет собирать iphone, второй будет собирать samsung.
         //В данном методе создать два телефона, собрать их, распечатать.
+        Factory factory = new Factory();
+        OperationSystem operationSystemSamsung = new OperationSystem("Android");
+        Motherboard motherboardSamsung = new Motherboard("j-108", 10, 12, 13);
+        Camera cameraSamsung = new Camera("Samsung", 20, false);
+        Samsung samsung = new Samsung("Samsung galaxy");
+
+        OperationSystem operationSystemIphone = new OperationSystem("Ios");
+        Motherboard motherboardIphone = new Motherboard("7uik", 15, 12, 13);
+        Camera cameraIphone = new Camera("iphone", 15, true);
+        Iphone iphone = new Iphone("Iphone 15");
+
+        factory.createTelephone(samsung,operationSystemSamsung,motherboardSamsung,cameraSamsung);
+        factory.createTelephone(iphone,operationSystemIphone,motherboardIphone,cameraIphone);
     }
 
     public static void ex3() {
@@ -66,6 +104,8 @@ public class Homework3 {
         // MMM
 
         //создать здесь pyramid1 и вызвать print
+        Pyramid1 pyramid1 = new Pyramid1();
+        pyramid1.print();
     }
 
     public static void ex4() {
@@ -79,6 +119,12 @@ public class Homework3 {
         //
         //Создать здесь 100 билетов, и проверить по каждому удачу.
         //Итоговая сумма выигрыша после проверки удачи 110 билетов должна составить 6_000.
+        int sum = 0;
+        for (int i = 0; i < 110; i++) {
+            LotteryTicket lotteryTicket = new LotteryTicket();
+            sum += lotteryTicket.checkMiracle();
+        }
+        System.out.println(sum);
     }
 
     public static void ex5() {
@@ -93,5 +139,16 @@ public class Homework3 {
         //Создать два дома, создать город с массивом созданных домов
         //При получении домов из массива, и изменении данных (например замена улицы) у дома,
         //у домов внутри city ничего не поменяется. Т.е. при вызове toString, будут старые имена улицы
+        House[] houses = {new House(10, "Лемешева"), new House(20, "Гусева")};
+        City tver = new City("Тверь", houses);
+
+        System.out.println(tver);
+
+        tver.getHouses()[0].setNumber(5);
+        tver.getHouses()[1].setNumber(10);
+        tver.getHouses()[0].setStreetName("Улица");
+        tver.getHouses()[1].setStreetName("Улица2");
+
+        System.out.println(tver);
     }
 }
