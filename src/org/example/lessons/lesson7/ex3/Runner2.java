@@ -1,10 +1,7 @@
 package org.example.lessons.lesson7.ex3;
 
-import java.util.List;
-
 public class Runner2 {
     public static void main(String[] args) {
-
         Mechanics mechanics = new Mechanics() {
             @Override
             public void repair() {
@@ -37,6 +34,7 @@ public class Runner2 {
             }
 
         };
+
         flyable.fly();
 
     }
