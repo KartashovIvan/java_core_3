@@ -1,7 +1,7 @@
 package org.example.homework.third.ex1;
 
 public abstract class Tree {
-    private final int age;
+    private int age;
 
     public Tree(int age) {
         this.age = age;
@@ -9,5 +9,9 @@ public abstract class Tree {
 
     public int getAge() {
         return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }

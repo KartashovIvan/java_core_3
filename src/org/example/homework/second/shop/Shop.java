@@ -2,19 +2,17 @@ package org.example.homework.second.shop;
 
 public class Shop {
     Worker[] workers;
+    private final ItemUtil itemUtil = new ItemUtil();
 
     public Shop(Worker[] workers) {
         this.workers = workers;
     }
 
-    public void printWorkers() {
+    public void printWorkersInfo() {
         for (Worker worker : workers) {
-            System.out.println(worker.name + ": "
-                    + worker.age + " лет, "
-                    + worker.gender + ", список вещей: "
-                    + worker.items[0].name
-                    + ", "
-                    + worker.items[1].name);
+            String sex = worker.isMale ? "мужчина" : "женщина";
+            System.out.printf("%s: %s лет, %s, список вещей:\n%s",
+                    worker.name, worker.age, sex, itemUtil.getTextItems(worker.items));
         }
     }
 }

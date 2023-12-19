@@ -1,7 +1,12 @@
 package org.example.homework.third.ex1;
 
-public class Pine extends Conifers {
-    public Pine(int age, String typeNeedles) {
-        super(age, typeNeedles);
+/**
+ * Сосна
+ */
+public class Pine extends Coniferous {
+    private static final String NEEDLE_TYPE = "крупные";
+
+    public Pine(int age) {
+        super(age, NEEDLE_TYPE);
     }
 }

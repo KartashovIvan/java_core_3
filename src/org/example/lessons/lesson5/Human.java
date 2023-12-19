@@ -1,7 +1,5 @@
 package org.example.lessons.lesson5;
 
-import org.example.lessons.lesson5.Cat;
-
 public class Human {
     //Константа - атрибут static final, особый стиль написания
     public static final String APPEAL_TO_HUMAN = "mr.";

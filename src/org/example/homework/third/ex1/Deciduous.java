@@ -1,17 +1,20 @@
 package org.example.homework.third.ex1;
 
+/**
+ * Лиственное
+ */
 public abstract class Deciduous extends Tree {
-    private boolean leaves = true;
+    private boolean haveLeaves = true;
 
     public Deciduous(int age) {
         super(age);
     }
 
-    public void leavesFall() {
-        leaves = false;
+    public void fallLeaves() {
+        this.haveLeaves = false;
     }
 
-    public void blooms() {
-        leaves = true;
+    public void bloom() {
+        this.haveLeaves = true;
     }
 }

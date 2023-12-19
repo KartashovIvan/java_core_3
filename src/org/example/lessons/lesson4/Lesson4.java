@@ -1,7 +1,5 @@
 package org.example.lessons.lesson4;
 
-import java.util.List;
-
 public class Lesson4 {
     public static void main(String[] args) {
         Human yuri = new Human("Yurich", 1992);

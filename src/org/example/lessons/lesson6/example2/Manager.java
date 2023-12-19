@@ -1,7 +1,7 @@
 package org.example.lessons.lesson6.example2;
 
 public class Manager extends Employee {
-    private int salary;
+    private final int salary;
 
     public Manager(String name, int age, String companyName, int salary) {
         super(name, age, companyName);
@@ -20,11 +20,7 @@ public class Manager extends Employee {
 
     @Override
     public String toString() {
-        return "Manager{" +
-                "salary=" + salary +
-                ", companyName='" + companyName + '\'' +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+        return "salary=" + "Manager{" + salary + ", companyName='" + companyName + '\'' + ", name='"
+                + name + '\'' + ", age=" + age + '}';
     }
 }

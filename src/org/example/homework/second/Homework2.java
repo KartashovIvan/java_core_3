@@ -6,7 +6,9 @@ import java.util.Random;
 public class Homework2 {
     public static void main(String[] args) {
         ex1();
+        System.out.println("___________________________________________");
         ex2();
+        System.out.println("___________________________________________");
         ex3();
     }
 
@@ -26,18 +28,17 @@ public class Homework2 {
 
         //Посчитать сумму каждой диагонали используя цикл(ы)
         //Вывесим на экран
-
         //С левого верхнего угла к нижнему правому
         int leftUpToRightDownSum = 0;
         //С левого нижнего угла к верхнему правому
         int leftDownToRightUpSum = 0;
-
         for (int i = 0; i < arrayOfNumbers.length; i++) {
             leftUpToRightDownSum += arrayOfNumbers[i][i];
             leftDownToRightUpSum += arrayOfNumbers[arrayOfNumbers.length - i - 1][i];
         }
 
-        System.out.println("leftUpToRightDownSum: " + leftUpToRightDownSum + "; leftDownToRightUpSum: " + leftDownToRightUpSum);
+        System.out.println(leftUpToRightDownSum);
+        System.out.println(leftDownToRightUpSum);
     }
 
     public static void ex2() {
@@ -55,18 +56,14 @@ public class Homework2 {
     public static void ex3() {
         //Дан распределитель случайных чисел
         Random random = new Random(1);
-        //Получение случайного числа
-        int number = random.nextInt(1000);
+
         //Написать код, генерирующий случайные числа до тех пор, пока не сгенерируется 999.
         //Вывести номер попытки, с которой получилось получить случайным образом число 999.
-        int counter = 1;
-
-        while (number != 999) {
-            number = random.nextInt(1000);
-            counter++;
+        int count = 1;
+        while (random.nextInt(1000) != 999) {
+            count++;
         }
-
-        System.out.println("Попытка № " + counter);
+        System.out.println(count);
     }
 
     public static void ex4() {

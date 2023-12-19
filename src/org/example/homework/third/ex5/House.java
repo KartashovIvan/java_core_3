@@ -1,25 +1,12 @@
 package org.example.homework.third.ex5;
 
-public class House {
-    private int number;
+public class House implements Cloneable {
     private String streetName;
+    private int houseNumber;
 
-    public House(int number, String streetName) {
-        this.number = number;
+    public House(String streetName, int houseNumber) {
         this.streetName = streetName;
-    }
-
-    public House (House house){
-        this.number = house.getNumber();
-        this.streetName = house.getStreetName();
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
+        this.houseNumber = houseNumber;
     }
 
     public String getStreetName() {
@@ -30,10 +17,24 @@ public class House {
         this.streetName = streetName;
     }
 
+    public int getHouseNumber() {
+        return houseNumber;
+    }
+
+    public void setHouseNumber(int houseNumber) {
+        this.houseNumber = houseNumber;
+    }
+
+    @Override
+    public House clone() throws CloneNotSupportedException {
+        return (House) super.clone();
+    }
+
     @Override
     public String toString() {
-        return "Дом " +
-                "номер " + number +
-                " - Улица " + streetName;
+        return "House{"
+                + "streetName='"
+                + streetName + '\'' + ", houseNumber="
+                + houseNumber + '}';
     }
 }

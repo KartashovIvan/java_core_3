@@ -9,6 +9,8 @@ public final class City {
     public City(String name, House[] houses) {
         this.name = name;
         this.houses = houses;
+        //если хотите сделать копию при получении домов
+        //this.houses = makeCopy(houses);
     }
 
     public String getName() {
@@ -16,16 +18,22 @@ public final class City {
     }
 
     public House[] getHouses() {
-        House[] temp = new House[houses.length];
+        return makeCopy(this.houses);
+    }
+
+    private static House[] makeCopy(House[] houses) {
+        House[] housesClone = new House[houses.length];
         for (int i = 0; i < houses.length; i++) {
-            temp[i] = new House(houses[i]);
+            housesClone[i]  = new House(houses[i].getStreetName(), houses[i].getHouseNumber());
         }
-        return temp;
+        return housesClone;
     }
 
     @Override
     public String toString() {
-        return "Название города " + name +
-                ", дома" + Arrays.toString(houses);
+        return "City{"
+                + "name='" + name + '\''
+                + ", houses=" + Arrays.toString(houses)
+                + '}';
     }
 }

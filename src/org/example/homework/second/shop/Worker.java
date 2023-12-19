@@ -1,22 +1,22 @@
 package org.example.homework.second.shop;
 
 public class Worker {
+    Item[] items;
     String name;
+    boolean isMale;
     int age;
-    String gender;
-    Item [] items;
 
-    public Worker(String name, int age, String gender, Item[] items) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
+    public Worker(Item[] items, String name, boolean isMale, int age) {
         this.items = items;
+        this.name = name;
+        this.isMale = isMale;
+        this.age = age;
     }
 
-    public void tellAboutItems (){
-        for (Item item :
-                items) {
-            System.out.println(this.name + ": смотрите какая у меня вещь - " + item.name);
+    public void brag() {
+        for (Item item : items) {
+            System.out.printf("%s: смотрите какая у меня вещь - %s\n",
+                    this.name, item.name);
         }
     }
 }

@@ -1,9 +1,8 @@
 package org.example.homework.third.ex3;
 
-public class Pyramid2 extends Pyramid3{
-    @Override
+public class Pyramid2 extends Pyramid3 {
     public void print() {
-        System.out.println("MM");
+        System.out.println("ММ");
         super.print();
     }
 }
