@@ -38,7 +38,7 @@ public class Homework3 {
         //
         //Создать в методе ex1 сосну, березу, ель. Положить в массив.
         //Посчитать их средний возраст.
-        Pine pine = new Pine(3, "Крупные");
+        Pine pine = new Pine(3);
         Spruce spruce = new Spruce(5, "Мелкие");
         Birch birch = new Birch(6);
 
@@ -78,8 +78,8 @@ public class Homework3 {
         Camera cameraIphone = new Camera("iphone", 15, true);
         Iphone iphone = new Iphone("Iphone 15");
 
-        factory.createTelephone(samsung,operationSystemSamsung,motherboardSamsung,cameraSamsung);
-        factory.createTelephone(iphone,operationSystemIphone,motherboardIphone,cameraIphone);
+        factory.createTelephone(samsung, operationSystemSamsung, motherboardSamsung, cameraSamsung);
+        factory.createTelephone(iphone, operationSystemIphone, motherboardIphone, cameraIphone);
     }
 
     public static void ex3() {
@@ -122,7 +122,7 @@ public class Homework3 {
         int sum = 0;
         for (int i = 0; i < 110; i++) {
             LotteryTicket lotteryTicket = new LotteryTicket();
-            sum += lotteryTicket.checkMiracle();
+            sum += lotteryTicket.checkLuck();
         }
         System.out.println(sum);
     }
@@ -139,13 +139,11 @@ public class Homework3 {
         //Создать два дома, создать город с массивом созданных домов
         //При получении домов из массива, и изменении данных (например замена улицы) у дома,
         //у домов внутри city ничего не поменяется. Т.е. при вызове toString, будут старые имена улицы
-        House[] houses = {new House(10, "Лемешева"), new House(20, "Гусева")};
+        House[] houses = {new House("Лемешева", 10), new House("Гусева", 20)};
         City tver = new City("Тверь", houses);
 
         System.out.println(tver);
 
-        tver.getHouses()[0].setNumber(5);
-        tver.getHouses()[1].setNumber(10);
         tver.getHouses()[0].setStreetName("Улица");
         tver.getHouses()[1].setStreetName("Улица2");
 

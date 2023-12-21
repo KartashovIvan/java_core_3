@@ -6,7 +6,7 @@
     <copyLibs>true</copyLibs>
     <option name="thirdPartyClasspath" />
     <option name="activeLocationIds">
-      <option value="1803f831-7143-480b-86e3-0bc6524769c5" />
+      <option value="fc4c346b-936b-488c-b94b-e9f17d0087ba" />
     </option>
     <option name="locations">
       <list>
@@ -22,6 +22,14 @@
         </ConfigurationLocation>
         <ConfigurationLocation id="1803f831-7143-480b-86e3-0bc6524769c5" type="LOCAL_FILE" scope="All" description="checkstyle_java_core">
           $PROJECT_DIR$/../../google_checks.xml
+          <option name="properties">
+            <map>
+              <entry key="org.checkstyle.google.suppressionxpathfilter.config" value="" />
+            </map>
+          </option>
+        </ConfigurationLocation>
+        <ConfigurationLocation id="fc4c346b-936b-488c-b94b-e9f17d0087ba" type="LOCAL_FILE" scope="All" description="test">
+          $PROJECT_DIR$/../google_checks.xml
           <option name="properties">
             <map>
               <entry key="org.checkstyle.google.suppressionxpathfilter.config" value="" />

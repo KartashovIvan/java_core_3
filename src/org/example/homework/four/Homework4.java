@@ -1,8 +1,22 @@
 package org.example.homework.four;
 
+import org.example.homework.four.ex1.Bus;
+import org.example.homework.four.ex1.Car;
+import org.example.homework.four.ex1.CarWash;
+import org.example.homework.four.ex1.PassengerCar;
+import org.example.homework.four.ex2.Airplane;
+import org.example.homework.four.ex2.Duck;
+import org.example.homework.four.ex2.Fly;
+import org.example.homework.four.ex2.FlyException;
+import org.example.homework.four.ex3.*;
+import org.example.homework.four.ex4.OneGramChat;
+
 public class Homework4 {
     public static void main(String[] args) {
-
+        ex1();
+        ex2();
+        ex3();
+        ex4();
     }
 
     public static void ex1() {
@@ -19,6 +33,9 @@ public class Homework4 {
         //В автомойку были отправлены грязные машины мэрии: 4 легковых(длина высота ширина) (5х2х1.8),
         //5 автобусов(12х3х2.3)
         //Посчитать, сколько мэрия заплатит денег за мойку машин.
+        CarWash carWash = new CarWash();
+        Car[] cars = {new PassengerCar(false, 1.8, 2, 5, true), new PassengerCar(false, 1.8, 2, 5, true), new PassengerCar(false, 1.8, 2, 5, true), new PassengerCar(false, 1.8, 2, 5, true), new Bus(false, 2.3, 3, 12, 13), new Bus(false, 2.3, 3, 12, 20), new Bus(false, 2.3, 3, 12, 28), new Bus(false, 2.3, 3, 12, 13), new Bus(false, 2.3, 3, 12, 7)};
+        System.out.println(carWash.washCar(cars));
     }
 
     public static void ex2() {
@@ -42,6 +59,22 @@ public class Homework4 {
         // Ошибка: утка ранена
         // самолет летит
         // Ошибка: пассажиров в самолете меньше 0
+        Duck duck1 = new Duck();
+        Duck duck2 = new Duck();
+        Airplane airplane1 = new Airplane();
+        Airplane airplane2 = new Airplane();
+        duck2.setInjured(true);
+        airplane1.setCountPassengers(10);
+        airplane2.setCountPassengers(-1);
+
+        Fly[] flies = {duck1, duck2, airplane1, airplane2};
+        for (Fly fly : flies) {
+            try {
+                fly.fly();
+            } catch (FlyException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     public static void ex3() {
@@ -53,6 +86,10 @@ public class Homework4 {
         //Сделать так, чтобы они все могли быть представлены к единому типу.
         //Создать в этом методе человека, строителя, водителя и птицу. Заставить их издать звуки.
         //Изданные звуки распечатать.
+        MakeSound[] sounds = {new Human(), new Builder(), new Driver(), new Bird()};
+        for (MakeSound sound : sounds) {
+            sound.sound();
+        }
     }
 
     public static void ex4() {
@@ -90,5 +127,8 @@ public class Homework4 {
         //"прочитать" - запуск функции "прочитать письмо"
         //"exit" - окончание работы программы
         //Ошибки в результате работы команд должны быть обработаны, и не должны заканчивать работу программы.
+
+        OneGramChat oneGramChat = new OneGramChat();
+        oneGramChat.startOneGramChat();
     }
 }
